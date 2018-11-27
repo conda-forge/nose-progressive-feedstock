@@ -1,25 +1,22 @@
-{% set name = "nose-progressive" %}
-{% set version = "1.5.1" %}
-{% set sha256 = "44bd41344c1cc1de434a72764ed47fdbbbdbcf03c7801114c0433cd6c696cb55" %}
+{% set version = "1.5.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: nose-progressive
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/n/nose-progressive/nose-progressive-{{ version }}.tar.gz
+  sha256: 3a6e2833e613c1c239baf05a19f66b5920915e62c07251d3ab3f3acb017ef5d7
 
 build:
   number: 1000
   skip: True  # [win]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - nose >=1.2.1  
