@@ -1,6 +1,6 @@
 {% set name = "nose-progressive" %}
-{% set version = "1.5.1" %}
-{% set sha256 = "44bd41344c1cc1de434a72764ed47fdbbbdbcf03c7801114c0433cd6c696cb55" %}
+{% set version = "1.5.2" %}
+{% set sha256 = "3a6e2833e613c1c239baf05a19f66b5920915e62c07251d3ab3f3acb017ef5d7" %}
 
 package:
   name: {{ name|lower }}
